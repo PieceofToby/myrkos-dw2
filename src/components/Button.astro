@@ -1,8 +1,10 @@
 ---
 
+const {title,href} = Astro.props;
+
 ---
 
-<a class="btn-home" href="/">Go Home</a>
+<a class="btn-home" href={href}>{title}</a>
 
 <style>
 .btn-home {
@@ -16,7 +18,7 @@
 
 }
 
-.btn-home:hover {
+a:hover {
     background-color: darkcyan;
     color:aliceblue;
 }
