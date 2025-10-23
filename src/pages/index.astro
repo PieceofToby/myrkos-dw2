@@ -26,9 +26,29 @@ import NewComponent from "@components/NewComponent.astro";
   <p>waow. im red, hopefully</p>
 </NewComponent>
 
+
+
 <SampleContent />
   <Frame title="my bitchin' frame ">
     <p>my slut tag lel</p>
   </Frame>
   <Button href="/index.astro" title="you're already home idiot"></Button>
+
+  <button class="theElephant">
+    <p>elephant</p>
+  </button>
+
 </Layout>
+
+<script>
+const myButton = document.querySelector ("#theElephant");
+
+const myFunction = function () {
+  alert("address me");
+
+};
+
+myButton.addEventListener("click", myFunction);
+
+
+</script>
