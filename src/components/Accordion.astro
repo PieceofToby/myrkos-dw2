@@ -1,0 +1,26 @@
+--- 
+const {title} = Astro.props;
+---
+
+<details>
+    <summary>{title}</summary>
+    <slot/>
+
+</details>
+
+<style>
+    details {
+        border: 1px solid black;
+        border-radius: .5rem;
+        max-width: 60rem;
+    }
+
+summary {
+    background-color: aliceblue;
+    padding: 1rem;
+    border-radius: .5rem;
+
+}
+
+
+</style>

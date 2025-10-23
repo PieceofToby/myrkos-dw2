@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "@components/Button.astro";
 import Frame from "@components/Frame.astro"
+import {Content as SampleContent} from "../components/markdown/sample-content.md"
+import AgeCheck from "@components/AgeCheck.astro";
 ---
 
 <Layout title="Home">
@@ -11,6 +13,11 @@ import Frame from "@components/Frame.astro"
     Feel free to start editing this page in <code>src/pages/index.astro</code>
   </p>
 
+  <AgeCheck birthYear="2003">
+    
+  </AgeCheck>
+
+<SampleContent />
   <Frame title="my bitchin' frame ">
     <p>my slut tag lel</p>
   </Frame>

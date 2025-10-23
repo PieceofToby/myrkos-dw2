@@ -1,0 +1,32 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import {Image} from "astro:assets"
+import HongLu from "src/assets/assignment-01/HongLu.png"
+import Accordion from "@components/Accordion.astro";
+export const pageTitle = "Project Proposal";
+---
+
+<Layout title={pageTitle}>
+  <h1>My Cool Proposal</h1>
+  <p>Imagine a guy</p>
+
+<Image
+      src={HongLu}
+      alt="An in-game sprite of Hong Lu from Limbus Company"
+/>
+<Accordion title="who is this guy">
+<p>my most favorite guy ever, Hong Lu from famed game Limbus Company.</p>
+<p>I could make pages about his different Identities, E.G.O.s, and his story/chapter in the game.</p>
+</Accordion>
+
+</Layout>
+
+<style>
+  h1 {
+    color: blue;
+  }
+
+  Image {
+    width: 100%;
+  }
+</style>

@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+export const pageTitle = "Component Testing";
+import Accordion from "@components/Accordion.astro";
+---
+
+<Layout title={pageTitle}>
+  <h1>Component Testing</h1>
+ 
+  <Accordion title="Sample">
+    <div class="accordion-content">
+      <p>some sample content</p>
+    </div>
+  </Accordion>
+  <pre><code>&lt;Layout compact title="Page Title"&gt;</code></pre>
+  <p>
+    In Astro, we usually write styling in a <code>&lt;style&gt;</code> tag within
+    each component file. This lets us keep the styles for each component together
+    with the component itself. Styles that are written in one component will not
+    affect other components or pages, even if you use the same class names.
+  </p>
+</Layout>
+
+<style>
+  h1 {
+    color: blue;
+  }
+</style>
