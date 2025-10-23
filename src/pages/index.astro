@@ -34,14 +34,14 @@ import NewComponent from "@components/NewComponent.astro";
   </Frame>
   <Button href="/index.astro" title="you're already home idiot"></Button>
 
-  <button class="theElephant">
+  <button id="my-button">
     <p>elephant</p>
   </button>
 
 </Layout>
 
 <script>
-const myButton = document.querySelector ("#theElephant");
+const myButton = document.querySelector("#my-button");
 
 const myFunction = function () {
   alert("address me");
@@ -49,6 +49,5 @@ const myFunction = function () {
 };
 
 myButton.addEventListener("click", myFunction);
-
 
 </script>
