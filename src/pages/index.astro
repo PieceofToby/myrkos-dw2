@@ -4,6 +4,7 @@ import Button from "@components/Button.astro";
 import Frame from "@components/Frame.astro"
 import {Content as SampleContent} from "../components/markdown/sample-content.md"
 import AgeCheck from "@components/AgeCheck.astro";
+import NewComponent from "@components/NewComponent.astro";
 ---
 
 <Layout title="Home">
@@ -16,6 +17,14 @@ import AgeCheck from "@components/AgeCheck.astro";
   <AgeCheck birthYear="2003">
     
   </AgeCheck>
+
+<NewComponent>
+  <p>waow. button</p>
+</NewComponent>
+
+<NewComponent color="red">
+  <p>waow. im red, hopefully</p>
+</NewComponent>
 
 <SampleContent />
   <Frame title="my bitchin' frame ">
