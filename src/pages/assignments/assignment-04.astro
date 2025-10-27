@@ -27,7 +27,29 @@ export const pageTitle = "JavaScript Testing";
     <p>elephant</p>
   </button>
 
+  <button id="color-button">
+    <p>mine cool button</p>
+  </button>
+<div class="text-block">
+  this is text.. inside a div
+</div>
+
+
 </Layout>
+
+<style>
+  .text-block {
+    border: 1px solid white;
+    padding: 1rem;
+    transition: all 0.5s;
+  }
+
+  .large-font {
+    font-size: 4rem;
+    transition: all 0.5s;
+  }
+
+</style>
 
 <script>
 const myButton = document.querySelector("#my-button");
@@ -41,3 +63,13 @@ myButton.addEventListener("click", myFunction);
 
 </script>
 
+<script>
+  const colorButton = document.querySelector("#color-button");
+
+  const myAction = function() {
+    const myTextblock = document.querySelector(".text-block");
+    myTextblock.classList.toggle("large-font")
+  };
+
+  colorButton.addEventListener('click', myAction);
+</script>
