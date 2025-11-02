@@ -1,0 +1,106 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Button from "@components/Button.astro";
+import Frame from "@components/Frame.astro"
+import {Content as SampleContent} from "../components/markdown/sample-content.md"
+import AgeCheck from "@components/AgeCheck.astro";
+import NewComponent from "@components/NewComponent.astro";
+export const pageTitle = "Light and Dark";
+import Accordion from "@components/Accordion.astro";
+---
+
+<Layout title={"Light and Dark"}>
+  <h1>Welcome!</h1>
+
+  <button id="btnDark">Dark yet Darker Mode
+
+  </button>
+
+  <button id="btnLight">Yet even Lighter Mode
+
+  </button>
+
+  <p>This is your Design for the Web 2 starter site.</p>
+  <p>
+    Feel free to start editing this page in <code>src/pages/index.astro</code>
+  </p>
+
+  <Accordion title="this is a COMPONENT">
+    <div class="accordion-content">
+      <p>. . .made versatile via javascript :3</p>
+    </div>
+  </Accordion>
+
+</Layout>
+
+<script>
+const btnDark = document.querySelector('#btnDark');
+
+  const setDark = function() {
+    document.documentElement.style.colorScheme = "dark";
+  }
+
+  btnDark.addEventListener('click', setDark);
+
+const btnLight = document.querySelector('#btnLight');
+
+  const setLight = function() {
+    document.documentElement.style.colorScheme = "light";
+  }
+
+  btnLight.addEventListener('click', setLight);
+
+</script>
+
+<style is:global>
+:root{
+  --theme-dark-fg: #9CB5D2;
+  --theme-dark-bg: #194679;
+  --theme-dark-accent: #3BBCF4;
+  --theme-dark-button: #9ddbff;
+  --theme-dark-btntext: #0f2083;
+  --theme-dark-details: #1e4f6b;
+  --theme-dark-summary: #2d658a;
+
+  --theme-light-fg: #275283 ;
+  --theme-light-bg: #E3F0FF ;
+  --theme-light-accent: #F43B63 ;
+  --theme-light-button: #203de2;
+  --theme-light-btntext: #f1faff;
+  --theme-light-details: #5aa0c9;
+  --theme-light-summary: #9ddbff;
+
+  color-scheme: light dark;
+
+  --color-fg:light-dark(var(--theme-light-fg), var(--theme-dark-fg));
+  --color-bg:light-dark(var(--theme-light-bg), var(--theme-dark-bg));
+  --color-accent:light-dark(var(--theme-light-accent), var(--theme-dark-accent));
+  --color-button:light-dark(var(--theme-light-button), var(--theme-dark-button));
+  --color-btntext:light-dark(var(--theme-light-btntext), var(--theme-dark-btntext));
+  --color-details:light-dark(var(--theme-light-details), var(--theme-dark-details));
+  --color-summary:light-dark(var(--theme-light-summary), var(--theme-dark-summary));
+
+}
+
+body{
+  background-color: var(--color-bg);
+
+}
+
+*{
+  color: var(--color-fg)
+}
+
+h1 {
+  color: var(--color-accent)
+}
+
+button {
+  background-color: var(--color-button);
+  color: var(--color-btntext);
+  padding: 1rem;
+}
+
+
+</style>
+
