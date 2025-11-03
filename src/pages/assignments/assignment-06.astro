@@ -1,0 +1,80 @@
+---
+import Layout from "../../layouts/Layout.astro";
+export const pageTitle = "Object Testing";
+import ProfileCard from "@components/ProfileCard.astro";
+
+const myrkos = {
+  name: "myrkos",
+  hometown: "anything can happen in da bronx",
+  website: "https://limbuscompany.wiki.gg/wiki/Hong_Lu",
+  age: 22,
+};
+
+const person2 = {
+  name: "hong lu",
+  hometown: "h corp, daguanyuan, district 8",
+  website: "https://www.youtube.com/watch?v=szyPY8nbBF4&list=RDszyPY8nbBF4&start_radio=1&pp=ygUJdGlhbiB0aWFuoAcB",
+  age: "im gonna say 22 just so we match",
+};
+
+const friends = [
+  "dawn",
+  "maddie",
+  "christian",
+  "myself",
+  "nicky",
+  "triple",
+  "shack",
+]
+
+const sinners = [
+  {
+    named: "faust",
+    url: "https://limbuscompany.wiki.gg/wiki/Faust",
+  },
+  {
+    named: "hong lu",
+    url: "https://limbuscompany.wiki.gg/wiki/Hong_Lu",
+  },
+  {
+    named: "don quixote",
+    url: "https://limbuscompany.wiki.gg/wiki/Don_Quixote",
+  },
+  {
+    named: "rodion",
+    url: "https://limbuscompany.wiki.gg/wiki/Rodion",
+  },
+];
+---
+
+<Layout title={pageTitle}>
+
+  <ProfileCard person={myrkos}/>
+
+  <ProfileCard person={person2}/>
+
+<ul>
+
+  {friends.map(function (item) {
+    return <li>{item}</li>
+  })}
+
+</ul>
+
+
+const randomIndex = Math.floor(Math.random () * friends.length);
+console.log(friends[randomIndex]);
+
+{
+  sinners.map(function (person){
+    return <a href={person.url}>{person.named}</a></br>;
+  })
+}
+
+</Layout>
+
+<style>
+  h1 {
+    color: blue;
+  }
+</style>
