@@ -1,0 +1,28 @@
+---
+const {data} = Astro.props;
+import CatImage from "./CatImage.astro";
+---
+
+<div class="cat-grid">
+
+    <h2>This sure is a(n) {data.name}</h2>
+    <CatImage imageID ={data.reference_image_id}/>
+    <p class="cat-temperament">{data.temperament}</p>
+    <p>{data.description}</p>
+    <a href={data.wikipedia_url}>View {data.name} on Wikipedia</a>
+
+</div>
+
+<style>
+
+.cat-grid {
+    border: 2px solid blue;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.cat-temperament {
+    font-style: italic;
+}
+
+</style>

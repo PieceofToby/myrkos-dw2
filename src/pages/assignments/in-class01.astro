@@ -1,0 +1,38 @@
+---
+import Layout from "../../layouts/Layout.astro";
+export const pageTitle = "Objects and Arrays";
+import CatCard from "@components/CatCard.astro";
+const data = await fetch("https://api.thecatapi.com/v1/breeds");
+const cats = await data.json();
+const selectedCats = cats.slice(1, 25);
+---
+
+<Layout title={pageTitle}>
+
+  <h1>Kittiez</h1>
+
+<div class="cat-grid">
+
+  {selectedCats.map(function (catData) {
+    return <CatCard data={catData}/>;
+    })
+  }
+
+
+</div>
+  
+
+ <code>{JSON.stringify(selectedCats,null,2)}</code>
+
+</Layout>
+
+<style>
+
+  .cat-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 2rem;
+    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+  }
+  
+</style>
